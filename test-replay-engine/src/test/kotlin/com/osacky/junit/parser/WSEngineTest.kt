@@ -7,15 +7,17 @@ import org.junit.platform.launcher.LauncherDiscoveryRequest
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder
 import org.junit.platform.testkit.engine.EngineExecutionResults
 import org.junit.platform.testkit.engine.EngineTestKit
-import org.junit.platform.testkit.engine.Event
-import java.io.File
 
-class ResultParsingEngineTest {
+class WSEngineTest {
 
   @Test
   fun testResultParsingEngine() {
-    val xml = "/Users/no/workspace/test-framework/lib/src/test/resources/junit-sample-report-no-error.xml"
-    val results = execute(LauncherDiscoveryRequestBuilder.request().build(), xml)
+    val xml = "/Users/no/workspace/test-framework/test-replay-engine/src/test/resources/junit-sample-report-no-error.xml"
+    System.setProperty("resultFile", xml)
+    val results = execute(
+      LauncherDiscoveryRequestBuilder.request()
+        .build()
+    )
     results.allEvents()
       .assertEventsMatchLooselyInOrder(
         Condition(
@@ -28,20 +30,26 @@ class ResultParsingEngineTest {
 
   @Test
   fun canParseTestFailure() {
-    val xml = "/Users/no/workspace/test-framework/lib/src/test/resources/junit-sample-report.xml"
-    val results = execute(LauncherDiscoveryRequestBuilder.request().build(), xml)
+    val xml = "/Users/no/workspace/test-framework/test-replay-engine/src/test/resources/junit-sample-report.xml"
+    System.setProperty("resultFile", xml)
+    val results = execute(
+      LauncherDiscoveryRequestBuilder.request()
+        .build()
+    )
     results.allEvents()
       .assertEventsMatchLooselyInOrder(
         Condition(
           { event -> event.testDescriptor.displayName == "com.example.app.ExampleUiTest#test3" },
           "matches test1"
         ),
-        Condition({ event -> event.testDescriptor.displayName == "com.example.app.TestFoo#test2"
-            && (event.payload.get() as TestExecutionResult).status.name == "FAILED" }, "matches test2")
+        Condition({ event ->
+          event.testDescriptor.displayName == "com.example.app.TestFoo#test2"
+              && (event.payload.get() as TestExecutionResult).status.name == "FAILED"
+        }, "matches test2")
       )
   }
 
-  private fun execute(request: LauncherDiscoveryRequest, dir: String): EngineExecutionResults {
-    return EngineTestKit.execute(ResultParsingEngine(dir), request)
+  private fun execute(request: LauncherDiscoveryRequest): EngineExecutionResults {
+    return EngineTestKit.execute(WSEngine(), request)
   }
 }

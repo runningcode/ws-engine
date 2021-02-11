@@ -1,8 +1,7 @@
 package com.osacky.junit.parser
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
 
 data class TestCase (
   val name: String,
@@ -11,5 +10,10 @@ data class TestCase (
   val failure: TestFailure?
 )
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class TestFailure(val type: String)
+data class TestFailure(
+  val type: String,
+  val message: String,
+  ) {
+  @get:JacksonXmlText
+  lateinit var stacktrace: String
+}

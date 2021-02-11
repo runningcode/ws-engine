@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="" tests="1" failures="0" errors="0" skipped="0" time="2.278" timestamp="2018-09-14T20:45:55" hostname="localhost" testLabExecutionId="matrix-1234_execution-asdf">
+    <properties />
+    <testcase name="test3" classname="com.example.app.ExampleUiTest" time="0.328" />
+    <testcase name="test2" classname="com.example.app.TestFoo">
+        <failure message="java.lang.IllegalStateException: NotEnoughFoo" type="java.lang.IllegalStateException">
+            java.lang.IllegalStateException: NotEnoughFoo
+            at com.osacky.junit.parser.WSEngine$execute$1.visit(ResultParsingEngine.kt:26)
+            at org.junit.platform.engine.TestDescriptor.accept(TestDescriptor.java:249)
+            at org.junit.platform.engine.TestDescriptor.lambda$accept$0(TestDescriptor.java:251)
+            at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+            at org.junit.platform.engine.TestDescriptor.accept(TestDescriptor.java:251)
+            at com.osacky.junit.parser.WSEngine.execute(ResultParsingEngine.kt:20)
+            at
+            org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+            at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+            at
+            org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+            at
+            org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+            at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+            at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+            at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+            at
+            org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+            at
+            org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+            at
+            org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+            at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+            at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+            at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+            at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+            at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+            at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+            at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+            at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+            at
+            org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+            at com.sun.proxy.$Proxy2.stop(Unknown Source)
+            at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
+            at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+            at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+            at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+            at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+            at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+            at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+            at
+            org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+            at
+            org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+            at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+            at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+            at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+            at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+            at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+            at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+            at java.base/java.lang.Thread.run(Thread.java:834)
+        </failure>
+    </testcase>
+</testsuite>

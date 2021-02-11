@@ -3,6 +3,6 @@
     <properties />
     <testcase name="test3" classname="com.example.app.ExampleUiTest" time="0.328" />
     <testcase name="test2" classname="com.example.app.TestFoo">
-        <failure type="NotEnoughFoo"> details about failure </failure>
+<!--        <failure message="Something" type="NotEnoughFoo"> details about failure </failure>-->
     </testcase>
 </testsuite>
