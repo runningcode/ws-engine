@@ -1,6 +1,5 @@
 package com.osacky.junit.parser
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
 
 data class TestCase (

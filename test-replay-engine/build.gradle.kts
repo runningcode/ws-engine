@@ -1,8 +1,6 @@
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.4.30"
+    id("org.jetbrains.kotlin.jvm") version "1.4.31"
 
-    // Apply the java-library plugin for API and implementation separation.
     id("maven-publish")
 }
 
@@ -36,8 +34,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // Use the Kotlin test library.
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.3")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.3")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.12.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test")

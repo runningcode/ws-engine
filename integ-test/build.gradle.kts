@@ -1,5 +1,5 @@
 plugins {
-  id("org.jetbrains.kotlin.jvm") version "1.4.30"
+  `java-library`
 }
 
 repositories {
@@ -14,6 +14,7 @@ tasks.withType(Test::class).configureEach {
   useJUnitPlatform {
     includeEngines("result-parsing-engine")
   }
+  outputs.upToDateWhen { false }
 
   systemProperties = mapOf("resultFile" to file("src/test/resources/junit-sample-report.xml"))
 }

@@ -20,6 +20,7 @@ class WSEngine : TestEngine {
   override fun execute(request: ExecutionRequest) {
     request.rootTestDescriptor.accept {
       if (it is TestCaseTestDescriptor) {
+        request.engineExecutionListener.executionStarted(it)
         if (it.isFailure) {
           // TODO change to stacktrace
           request.engineExecutionListener.executionFinished(

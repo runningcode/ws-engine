@@ -5,10 +5,12 @@ plugins {
 rootProject.name = "ws-engine"
 include("test-replay-engine")
 include("integ-test")
+include("no-plugin-integ")
 
 gradleEnterprise {
   buildScan {
-    server = "https://ge-unstable.grdev.net"
+//    server = "https://ge-unstable.grdev.net"
+//    publishAlways()
   }
 }
 

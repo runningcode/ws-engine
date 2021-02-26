@@ -14,7 +14,6 @@ class XMLTestDescriptor(uniqueId: UniqueId, displayName: String, private val rep
     val testSuite = XmlMapper()
         .registerKotlinModule()
         .readValue(reportFile.readText(), TestSuite::class.java)
-//    println(testSuite)
     testSuite.testCases.forEach {
       addChild(TestCaseTestDescriptor(uniqueId.append("test", it.name), it.classname + "#" + it.name, failure = it.failure))
     }
