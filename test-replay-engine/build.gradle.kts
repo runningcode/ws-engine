@@ -1,11 +1,11 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.4.31"
+    id("org.jetbrains.kotlin.jvm")
 
-    id("maven-publish")
+    `maven-publish`
 }
 
-group = "com.osacky.ws.engine"
-version = "1.0"
+group = "com.osacky.ws"
+version = rootProject.version
 
 sourceSets {
     create("intTest") {
@@ -49,7 +49,7 @@ dependencies {
 
 }
 
-val projectMaven = file("$buildDir/localMaven")
+val projectMaven = file("${rootProject.buildDir}/localMaven")
 
 val integrationTest = task<Test>("integrationTest") {
     description = "Runs integration tests."

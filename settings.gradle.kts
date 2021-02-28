@@ -6,13 +6,14 @@ rootProject.name = "ws-engine"
 include("test-replay-engine")
 include("integ-test")
 include("no-plugin-integ")
+include("ws-gradle-plugin")
 
-gradleEnterprise {
-  buildScan {
-//    server = "https://ge-unstable.grdev.net"
+//gradleEnterprise {
+//  buildScan {
+//    server = "https://e.grdev.net"
 //    publishAlways()
-  }
-}
+//  }
+//}
 
 dependencyResolutionManagement {
   repositories {

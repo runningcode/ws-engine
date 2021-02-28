@@ -34,7 +34,7 @@ class EngineSampleProject(private val tempRoot : TemporaryFolder, private val ju
       }
       
       dependencies {
-        testRuntimeOnly("com.osacky.ws.engine:test-replay-engine:1.0")
+        testRuntimeOnly("com.osacky.ws:test-replay-engine:1.0")
         testRuntimeOnly(platform("org.junit:junit-bom:5.7.0"))
       }
     """.trimIndent())
