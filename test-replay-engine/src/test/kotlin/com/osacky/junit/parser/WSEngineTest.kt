@@ -12,7 +12,7 @@ class WSEngineTest {
 
   @Test
   fun testResultParsingEngine() {
-    val xml = "/Users/no/workspace/test-framework/test-replay-engine/src/test/resources/junit-sample-report-no-error.xml"
+    val xml = "/Users/no/workspace/ws-engine/test-replay-engine/src/test/resources/junit-sample-report-no-error.xml"
     System.setProperty("resultFile", xml)
     val results = execute(
       LauncherDiscoveryRequestBuilder.request()
@@ -30,7 +30,7 @@ class WSEngineTest {
 
   @Test
   fun canParseTestFailure() {
-    val xml = "/Users/no/workspace/test-framework/test-replay-engine/src/test/resources/junit-sample-report.xml"
+    val xml = "/Users/no/workspace/ws-engine/test-replay-engine/src/test/resources/junit-sample-report.xml"
     System.setProperty("resultFile", xml)
     val results = execute(
       LauncherDiscoveryRequestBuilder.request()
@@ -40,6 +40,27 @@ class WSEngineTest {
       .assertEventsMatchLooselyInOrder(
         Condition(
           { event -> event.testDescriptor.displayName == "com.example.app.ExampleUiTest#test3" },
+          "matches test1"
+        ),
+        Condition({ event ->
+          event.testDescriptor.displayName == "com.example.app.TestFoo#test2"
+              && (event.payload.get() as TestExecutionResult).status.name == "FAILED"
+        }, "matches test2")
+      )
+  }
+
+  @Test
+  fun canParseScansUI() {
+    val xml = "/Users/no/workspace/ws-engine/test-replay-engine/src/test/resources/test-results-ActionButton.xml"
+    System.setProperty("resultFile", xml)
+    val results = execute(
+      LauncherDiscoveryRequestBuilder.request()
+        .build()
+    )
+    results.allEvents()
+      .assertEventsMatchLooselyInOrder(
+        Condition(
+          { event -> event.testDescriptor.displayName == "should render correctly by default" },
           "matches test1"
         ),
         Condition({ event ->

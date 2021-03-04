@@ -30,6 +30,7 @@ class WSEngine : TestEngine {
         } else {
           request.engineExecutionListener.executionFinished(it, TestExecutionResult.successful())
         }
+      } else if (it is TestClassTestDescriptor) {
       }
     }
   }

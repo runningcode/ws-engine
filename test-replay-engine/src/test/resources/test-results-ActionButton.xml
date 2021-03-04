@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="9" time="0.011">
+ <testsuite name="ActionButton" timestamp="2021-02-11T23:16:53" hostname="localhost" time="0.011" errors="0" tests="9" skipped="0" disabled="0" failures="0">
+  <testcase classname="ActionButton" name="should render correctly by default" time="0.002" />
+  <testcase classname="ActionButton" name="should render correctly when is default action" time="0.001" />
+  <testcase classname="ActionButton" name="should render correctly when disabled" time="0.001" />
+  <testcase classname="ActionButton" name="should render correctly when toggled" time="0.001" />
+  <testcase classname="ActionButton" name="should render correctly with tooltip" time="0.002" />
+  <testcase classname="ActionButton" name="should render correctly with tab index" time="0.001" />
+  <testcase classname="ActionButton" name="should render correctly when size is big" time="0.001" />
+  <testcase classname="ActionButton" name="should be clickable when not disabled" time="0.001" />
+  <testcase classname="ActionButton" name="should not be clickable when disabled" time="0.001" />
+ </testsuite>
+</testsuites>

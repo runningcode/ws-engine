@@ -8,12 +8,12 @@ include("integ-test")
 include("no-plugin-integ")
 include("ws-gradle-plugin")
 
-//gradleEnterprise {
-//  buildScan {
-//    server = "https://e.grdev.net"
-//    publishAlways()
-//  }
-//}
+gradleEnterprise {
+  buildScan {
+    server = "https://e.grdev.net"
+    publishAlways()
+  }
+}
 
 dependencyResolutionManagement {
   repositories {
